@@ -1,0 +1,32 @@
+/* .home {
+    height: 100vh;
+} */
+
+.option {
+    width: 100%;
+    padding: 0 7rem;
+    height: 3rem;
+    background-color: rgb(230, 230, 230);
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    font-family: var(--nunito);
+    font-style: italic;
+    font-size: 1.2rem;
+}
+
+.option p {
+    cursor: pointer;
+    user-select: none;
+}
+
+.active {
+    color: var(--blue);
+}
+
+.container {
+    padding: 1rem 12rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+}

@@ -1,0 +1,120 @@
+.layout {
+    display: flex;
+    flex-direction: column;
+}
+
+.layout nav {
+    width: 100%;
+    height: 3rem;
+    background-color: white;
+    box-shadow: 0 0.1rem 0.4rem rgba(51, 51, 51, 0.459);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 2rem;
+}
+
+.layout nav img {
+    display: inline-block;
+    width: 8rem;
+    -webkit-user-drag: none;
+    user-select: none;
+    cursor: pointer;
+}
+
+.layout nav div {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.layout nav div ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 20rem;
+    height: 100%;
+}
+
+.layout nav div ul li {
+    list-style: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.layout nav div div {
+    padding-left: 2rem;
+    border-left: 2px solid var(--black);
+}
+
+.layout nav div div button {
+    font-size: 1.3rem;
+    height: auto;
+    padding: 0 1.2rem;
+    border: none;
+    background-color: var(--blue);
+    border-radius: 2rem;
+    color: white;
+    cursor: pointer;
+}
+
+.layout footer {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 12rem;
+    background-color: var(--black);
+}
+
+.layout footer div {
+    width: 25rem;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+    align-items: center;
+}
+
+.layout footer div img {
+    width: 7rem;
+}
+
+.layout footer div ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 20rem;
+    height: 100%;
+}
+
+.layout footer div ul li {
+    list-style: none;
+    font-size: 1.5rem;
+    color: white;
+    cursor: pointer;
+}
+
+.layout footer div div {
+    width: 50%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.layout footer div div img {
+    width: 1.6rem;
+    cursor: pointer;
+}
+
+.layout footer div p {
+    color: white;
+    font-family: var(--nunito);
+    font-size: 0.7rem;
+}
+
+.layout footer div p span {
+    color: var(--blue);
+    font-family: var(--nunito);
+}

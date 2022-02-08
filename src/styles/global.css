@@ -1,0 +1,38 @@
+@import url("https://fonts.googleapis.com/css2?family=Dongle:wght@300;400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,600;1,400&display=swap");
+
+:root {
+    --shadow: 0 0.1rem 0.4rem rgba(51, 51, 51, 0.459);
+    --blue: rgb(63, 63, 255);
+    --black: #1a1a1a;
+    --dongle: "Dongle", sans-serif;
+    --nunito: "Nunito Sans", sans-serif;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: var(--dongle);
+}
+
+::-webkit-scrollbar {
+    width: 0.9rem;
+    margin-right: 0.3rem;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+    margin: 1.3px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgb(78, 78, 78);
+    border-radius: 2rem;
+    border: 0.27rem solid white;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(141, 141, 141);
+    opacity: 0.4;
+}
