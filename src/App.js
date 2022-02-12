@@ -1,11 +1,12 @@
 import "./styles/global.css";
 import Layout from "./components/Layout";
 import Home from "./components/Home";
+import Blog from "./components/Blog";
 
 const App = () => {
     return (
         <Layout>
-            <Home></Home>
+            <Blog></Blog>
         </Layout>
     );
 };
