@@ -1,0 +1,16 @@
+.min {
+    width: 30%;
+    height: auto;
+}
+
+.min .text {
+    margin-top: 0.4rem;
+}
+
+.min .text h1 {
+    line-height: 1.5rem;
+}
+
+.min .text a {
+    text-decoration: none;
+}

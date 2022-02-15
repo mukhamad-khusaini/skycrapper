@@ -6,7 +6,7 @@ import Blog from "./components/Blog";
 const App = () => {
     return (
         <Layout>
-            <Blog></Blog>
+            <Home></Home>
         </Layout>
     );
 };
