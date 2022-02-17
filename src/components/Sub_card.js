@@ -1,4 +1,5 @@
 import css from "../styles/Sub_card.module.css";
+import { Link } from "react-router-dom";
 
 const Sub_card = (props) => {
     const image = {
@@ -11,12 +12,12 @@ const Sub_card = (props) => {
     };
 
     return (
-        <div key={props.key} className={css.min}>
+        <div key={props.id} className={css.min}>
             <div style={image}></div>
             <div className={css.text}>
                 <p>M. Kalingga - 19 Desember 2022</p>
                 <h1>How to Handle Shipping and Delivery During World-wide Pandemic</h1>
-                <a href="/">Read More &#62;&#62;</a>
+                <Link to={"/blog" + props.href}>Read More &#62;&#62;</Link>
             </div>
         </div>
     );

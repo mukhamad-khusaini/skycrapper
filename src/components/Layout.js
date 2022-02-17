@@ -1,10 +1,18 @@
 import css from "../styles/Layout.module.css";
+import { useNavigate } from "react-router-dom";
 
 const Layout = (props) => {
+    const navigate = useNavigate();
     return (
         <div className={css.layout}>
             <nav>
-                <img src="./img/logo.png" alt="Skycrapper" />
+                <img
+                    onClick={() => {
+                        navigate("/");
+                    }}
+                    src="./img/logo.png"
+                    alt="Skycrapper"
+                />
                 <div>
                     <ul>
                         <li>Home</li>

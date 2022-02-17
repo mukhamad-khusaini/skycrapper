@@ -1,11 +1,13 @@
 import { useEffect, useState } from "react";
 import css from "../styles/Main_post.module.css";
+import { Link } from "react-router-dom";
 
 const Main_post = () => {
     const [title, setTitle] = useState(false);
     const [author, setAuthor] = useState(false);
     const [date, setDate] = useState(false);
     const [image, setImage] = useState(false);
+    const [url, setUrl] = useState(false);
 
     const img = {
         width: "45%",
@@ -22,6 +24,7 @@ const Main_post = () => {
         setAuthor(json.author);
         setDate(json.date);
         setImage(json.image);
+        setUrl(json.href);
     }
 
     useEffect(() => {
@@ -40,7 +43,7 @@ const Main_post = () => {
                     {author} - {date}
                 </p>
                 <h1>{title}</h1>
-                <a href="">Read More &#62;&#62;</a>
+                <Link to={"/blog" + url}>Read More &#62;&#62;</Link>
             </div>
         </div>
     );
