@@ -8,6 +8,7 @@ const Main_post = () => {
     const [date, setDate] = useState(false);
     const [image, setImage] = useState(false);
     const [url, setUrl] = useState(false);
+    const [id, setId] = useState(false);
 
     const img = {
         width: "45%",
@@ -25,6 +26,7 @@ const Main_post = () => {
         setDate(json.date);
         setImage(json.image);
         setUrl(json.href);
+        setId(json.id);
     }
 
     useEffect(() => {
@@ -43,7 +45,7 @@ const Main_post = () => {
                     {author} - {date}
                 </p>
                 <h1>{title}</h1>
-                <Link to={"/blog" + url}>Read More &#62;&#62;</Link>
+                <Link to={"/blog/" + id}>Read More &#62;&#62;</Link>
             </div>
         </div>
     );

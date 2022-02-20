@@ -1,7 +1,19 @@
+import { useState, useEffect } from "react";
+import { useParams } from "react-router-dom";
 import css from "../styles/Blog.module.css";
 import Card_box from "./Card_box";
+import { url } from "../Global_variables";
 
 const Blog = () => {
+    const [data, setData] = useState(false);
+    const { id } = useParams();
+
+    useEffect(() => {
+        fetch(url + "/" + id)
+            .then((res) => res.json())
+            .then((res) => setData(res));
+    }, []);
+
     return (
         <div className={css.blog}>
             <div className={css.header}>
@@ -45,7 +57,7 @@ const Blog = () => {
                 <div className={css.share}>
                     <h2>Share Article</h2>
                     <div>
-                        <img src="./img/twtBlack.png" alt="tweeter" />
+                        <img src={url + "/img/twtBlack.png"} alt="tweeter" />
                         <img src="./img/fbBlack.png" alt="facebook" />
                         <img src="./img/waBlack.png" alt="whatsapp" />
                     </div>
