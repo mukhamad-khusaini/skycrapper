@@ -13,7 +13,24 @@ const Layout = (props) => {
                     src="./img/logo.png"
                     alt="Skycrapper"
                 />
-                <div>
+                <div className={css.mainNav}>
+                    <ul>
+                        <li>Home</li>
+                        <li>About</li>
+                        <li>Contact</li>
+                    </ul>
+                    <div>
+                        <button>Sign Up</button>
+                    </div>
+                </div>
+                <button className={css.btnNav}>
+                    <ul>
+                        <li></li>
+                        <li></li>
+                        <li></li>
+                    </ul>
+                </button>
+                <div className={css.secondNav}>
                     <ul>
                         <li>Home</li>
                         <li>About</li>

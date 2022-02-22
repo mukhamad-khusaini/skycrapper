@@ -14,3 +14,10 @@
 .min .text a {
     text-decoration: none;
 }
+
+@media only screen and (max-width: 800px) {
+    .min {
+        width: 90%;
+        margin-bottom: 2rem;
+    }
+}

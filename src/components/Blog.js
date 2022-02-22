@@ -57,7 +57,7 @@ const Blog = () => {
                 <div className={css.share}>
                     <h2>Share Article</h2>
                     <div>
-                        <img src={url + "/img/twtBlack.png"} alt="tweeter" />
+                        <img src="./img/twtBlack.png" alt="tweeter" />
                         <img src="./img/fbBlack.png" alt="facebook" />
                         <img src="./img/waBlack.png" alt="whatsapp" />
                     </div>
