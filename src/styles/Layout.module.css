@@ -12,6 +12,8 @@
     align-items: center;
     justify-content: space-between;
     padding: 0 2rem;
+    position: fixed;
+    z-index: 9;
 }
 
 .layout nav img {
@@ -60,11 +62,15 @@
 }
 
 .layout nav .btnNav {
+    position: relative;
+    z-index: 99;
+    background-color: transparent;
     width: 2rem;
     height: 2rem;
     display: inline-block;
     border: none;
     cursor: pointer;
+    display: none;
 }
 
 .layout nav .btnNav ul {
@@ -81,26 +87,52 @@
     background-color: black;
     list-style: none;
     border-radius: 0.5rem;
+    transition: 0.5s ease;
 }
 
-.layout nav .btnNav ul li:nth-child(1) {
-    width: 60%;
-}
 .layout nav .btnNav ul li:nth-child(2) {
     width: 80%;
 }
-.layout nav .btnNav ul li:nth-child(3) {
+/* .layout nav .btnNav ul li:nth-child(1) {
+    width: 60%;
+}
+/* .layout nav .btnNav ul li:nth-child(3) {
     width: 100%;
+} */
+
+/* .layout nav .secondNav {
+    width: 15rem;
+    height: 100vh;
+    background-color: var(--blue);
+    position: fixed;
+    top: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 2rem;
+    transform: translateX(20rem);
+    transition: 0.5s ease;
 }
 
-.layout nav .secondNav {
-    width: 6rem;
-    height: 10rem;
-    background-color: white;
-    position: absolute;
-    top: 5rem;
-    right: 4rem;
+.layout nav .secondNav ul li {
+    list-style: none;
+    font-size: 2rem;
+    color: white;
+    text-align: center;
 }
+
+.layout nav .secondNav div {
+    padding: 1.3rem 0;
+}
+
+.layout nav .secondNav div button {
+    height: 1.6rem;
+    width: 6rem;
+    border: none;
+    font-size: 1.2rem;
+    border-radius: 1rem;
+} */
 
 .layout footer {
     width: 100%;
@@ -163,4 +195,11 @@
 }
 
 @media only screen and (max-width: 800px) {
+    .layout nav .mainNav {
+        display: none;
+    }
+
+    .layout nav .btnNav {
+        display: inline-block;
+    }
 }

@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useMediaQuery } from "react-responsive";
 import css from "../styles/Main_post.module.css";
 import { Link } from "react-router-dom";
 
@@ -7,10 +8,10 @@ const Main_post = () => {
     const [author, setAuthor] = useState(false);
     const [date, setDate] = useState(false);
     const [image, setImage] = useState(false);
-    const [url, setUrl] = useState(false);
+    // const [url, setUrl] = useState(false);
     const [id, setId] = useState(false);
 
-    const img = {
+    const [style, setStyle] = useState({
         width: "45%",
         height: "100%",
         borderRadius: "0.5rem",
@@ -18,14 +19,16 @@ const Main_post = () => {
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundRepeat: "no-repeat",
-    };
+    });
+
+    const isMobile = useMediaQuery({ query: "(max-width: 800px)" });
 
     function handleChange(json) {
         setTitle(json.title);
         setAuthor(json.author);
         setDate(json.date);
         setImage(json.image);
-        setUrl(json.href);
+        // setUrl(json.href);
         setId(json.id);
     }
 
@@ -35,11 +38,32 @@ const Main_post = () => {
         })
             .then((res) => res.json())
             .then((res) => handleChange(res.blog[0]));
-    }, []);
+        if (isMobile) {
+            setStyle({
+                width: "100%",
+                height: "100%",
+                borderRadius: "0.5rem",
+                backgroundImage: "url(" + image + ")",
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+            });
+        } else {
+            setStyle({
+                width: "45%",
+                height: "100%",
+                borderRadius: "0.5rem",
+                backgroundImage: "url(" + image + ")",
+                backgroundPosition: "center",
+                backgroundSize: "cover",
+                backgroundRepeat: "no-repeat",
+            });
+        }
+    }, [isMobile, image]);
 
     return (
         <div className={css.main}>
-            <div style={img}></div>
+            <div style={style}></div>
             <div className={css.text}>
                 <p>
                     {author} - {date}
