@@ -36,7 +36,7 @@
 
 @media only screen and (max-width: 800px) {
     .option {
-        padding: 0 3rem;
+        padding: 0 1rem;
         gap: 1rem;
         justify-content: space-evenly;
     }
@@ -46,6 +46,6 @@
     }
 
     .container {
-        padding: 1rem 3rem;
+        padding: 1rem 1rem;
     }
 }

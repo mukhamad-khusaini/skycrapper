@@ -139,3 +139,33 @@
     font-family: var(--nunito);
     font-size: 0.7rem;
 }
+
+@media only screen and (max-width: 1024px) {
+    .blog {
+        padding: calc(1rem + 3rem) 7rem;
+    }
+
+    .blog .header h1 {
+        font-size: 2rem;
+        line-height: 1.5rem;
+    }
+
+    .blog .header p {
+        font-size: 1rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .blog {
+        padding: calc(1rem + 3rem) 1rem;
+    }
+
+    .blog .header h1 {
+        font-size: 1.8rem;
+        line-height: 1.5rem;
+    }
+
+    .blog .header p {
+        font-size: 1rem;
+    }
+}
