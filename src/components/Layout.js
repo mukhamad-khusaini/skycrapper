@@ -36,7 +36,7 @@ const Layout = (props) => {
                     onClick={() => {
                         navigate("/");
                     }}
-                    src="./img/logo.png"
+                    src={require("../img/logo.png")}
                     alt="Skycrapper"
                 />
                 <div className={css.mainNav}>
@@ -66,16 +66,16 @@ const Layout = (props) => {
             <div>{props.children}</div>
             <footer>
                 <div>
-                    <img src="./img/logo-white.png" alt="logo" />
+                    <img src={require("../img/logo-white.png")} alt="logo" />
                     <ul>
                         <li>Home</li>
                         <li>About</li>
                         <li>Contact</li>
                     </ul>
                     <div>
-                        <img src="./img/fb.png" alt="FB" />
-                        <img src="./img/twt.png" alt="tweeter" />
-                        <img src="./img/in.png" alt="linkedin" />
+                        <img src={require("../img/fb.png")} alt="FB" />
+                        <img src={require("../img/twt.png")} alt="tweeter" />
+                        <img src={require("../img/in.png")} alt="linkedin" />
                     </div>
                     <p>
                         &copy; 2022 All Right Reserved. <span>Skycrepper</span>
