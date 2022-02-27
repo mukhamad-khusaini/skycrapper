@@ -24,4 +24,8 @@
     .box {
         flex-direction: column;
     }
+
+    .title h1 {
+        font-size: 2rem;
+    }
 }

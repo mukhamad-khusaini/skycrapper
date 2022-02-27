@@ -23,7 +23,7 @@ const Blog = () => {
                 <span></span>
             </div>
             <div className={css.content}>
-                <img src="./img/ship.jpg" alt="ship" />
+                <img src="/img/ship.jpg" alt="ship" />
                 <h6>unsplash.com</h6>
                 <div className={css.txt}>
                     <p>
@@ -58,8 +58,8 @@ const Blog = () => {
                     <h2>Share Article</h2>
                     <div>
                         <img src="/img/twtBlack.png" alt="tweeter" />
-                        <img src="./img/fbBlack.png" alt="facebook" />
-                        <img src="./img/waBlack.png" alt="whatsapp" />
+                        <img src="/img/fbBlack.png" alt="facebook" />
+                        <img src="/img/waBlack.png" alt="whatsapp" />
                     </div>
                 </div>
                 <div className={css.author}>

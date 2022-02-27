@@ -168,4 +168,20 @@
     .blog .header p {
         font-size: 1rem;
     }
+
+    .blog .header span {
+        left: 35%;
+    }
+
+    .blog .content img {
+        width: 100%;
+    }
+
+    .blog .content .txt p {
+        font-size: 0.8rem;
+    }
+
+    .blog .content .share div {
+        width: 30%;
+    }
 }
