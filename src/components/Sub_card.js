@@ -17,7 +17,7 @@ const Sub_card = (props) => {
             <div className={css.text}>
                 <p>M. Kalingga - 19 Desember 2022</p>
                 <h1>How to Handle Shipping and Delivery During World-wide Pandemic</h1>
-                <Link to={"/blog" + props.href}>Read More &#62;&#62;</Link>
+                <a href={"/blog" + props.href}>Read More &#62;&#62;</a>
             </div>
         </div>
     );

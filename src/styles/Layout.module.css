@@ -135,6 +135,11 @@
     cursor: pointer;
 }
 
+.layout footer div ul li a {
+    color: white;
+    text-decoration: none;
+}
+
 .layout footer div div {
     width: 50%;
     display: flex;

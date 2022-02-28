@@ -6,12 +6,16 @@ import { url } from "../Global_variables";
 
 const Blog = () => {
     const [data, setData] = useState(false);
+    const [text, setText] = useState(false);
     const { id } = useParams();
 
     useEffect(() => {
         fetch(url + "/" + id)
             .then((res) => res.json())
-            .then((res) => setData(res));
+            .then((res) => {
+                setData(res);
+                setText(JSON.parse(res[0].body));
+            });
     }, []);
 
     return (
@@ -26,33 +30,10 @@ const Blog = () => {
                 <img src="/img/ship.jpg" alt="ship" />
                 <h6>unsplash.com</h6>
                 <div className={css.txt}>
-                    <p>
-                        <span>Yogyakarta, 20 Maret 2021</span> - Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum orci
-                        leo, tempor quis odio non, fermentum tempor dolor. Quisque nec tristique velit. Maecenas id sapien mauris. Morbi
-                        lacinia nunc ut viverra tempor. Nulla dictum ex quam, at molestie felis egestas vitae. Cras ante eros, porta ac enim
-                        in, consequat maximus mauris. Nam viverra fringilla turpis in vestibulum. Vivamus tristique cursus ornare.
-                        Suspendisse tempor velit vitae risus elementum porttitor. Aliquam sagittis imperdiet ipsum sed tristique. Ut
-                        sagittis ut lectus ut blandit.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum orci leo, tempor quis odio non, fermentum tempor
-                        dolor. Quisque nec tristique velit. Maecenas id sapien mauris. Morbi lacinia nunc ut viverra tempor. Nulla dictum ex
-                        quam, at molestie felis egestas vitae. Cras ante eros, porta ac enim in, consequat maximus mauris. Nam viverra
-                        fringilla turpis in vestibulum. Vivamus tristique cursus ornare. Suspendisse tempor velit vitae risus elementum
-                        porttitor. Aliquam sagittis imperdiet ipsum sed tristique. Ut sagittis ut lectus ut blandit.
-                    </p>
-                    <p>
-                        Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum orci leo, tempor quis odio non, fermentum tempor
-                        dolor. Quisque nec tristique velit. Maecenas id sapien mauris. Morbi lacinia nunc ut viverra tempor. Nulla dictum ex
-                        quam, at molestie felis egestas vitae. Cras ante eros, porta ac enim in, consequat maximus mauris. Nam viverra
-                        fringilla turpis in vestibulum. Vivamus tristique cursus ornare. Suspendisse tempor velit vitae risus elementum
-                        porttitor. Aliquam sagittis imperdiet ipsum sed tristique. Ut sagittis ut lectus ut blandit.
-                    </p>
-                    <ol>
-                        <li>Lorem ipsum dolor sit amet,</li>
-                        <li>Cras ante eros, porta ac enim in, consequat maximus mauris</li>
-                        <li>Ut sagittis ut lectus ut blandit.</li>
-                    </ol>
+                    {text &&
+                        text.map((e, i) => {
+                            return <p key={i}>{e}</p>;
+                        })}
                 </div>
                 <div className={css.share}>
                     <h2>Share Article</h2>

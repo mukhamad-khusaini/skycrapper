@@ -74,9 +74,15 @@ const Layout = (props) => {
                 <div>
                     <img src="/img/logo-white.png" alt="logo" />
                     <ul>
-                        <li>Home</li>
-                        <li>About</li>
-                        <li>Contact</li>
+                        <li>
+                            <Link to="/">Home</Link>
+                        </li>
+                        <li>
+                            <Link to="/about">About</Link>
+                        </li>
+                        <li>
+                            <Link to="/contact">Contact</Link>
+                        </li>
                     </ul>
                     <div>
                         <img src="/img/fb.png" alt="FB" />
