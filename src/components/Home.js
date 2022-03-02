@@ -1,7 +1,7 @@
 import { useState } from "react";
+import { Routes, Route } from "react-router-dom";
 import css from "../styles/Home.module.css";
-import Main_post from "./Main_post";
-import Card_box from "./Card_box";
+import Latest from "./Latest";
 
 function Home() {
     const [isActive1, setIsActive1] = useState(true);
@@ -32,10 +32,10 @@ function Home() {
                 </p>
             </div>
             <div className={css.container}>
-                <Main_post />
-                <Card_box title="Trending" />
-                <Card_box title="Most Liked" />
-                <Card_box title="Oldest" />
+                {isActive1 && <Latest />}
+                {isActive2 && <Latest />}
+                {isActive3 && <Latest />}
+                {isActive4 && <Latest />}
             </div>
         </div>
     );

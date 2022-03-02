@@ -1,0 +1,10 @@
+.latest {
+    transform: translateX(20rem);
+    animation: move 1s ease forwards;
+}
+
+@keyframes move {
+    to {
+        transform: translateX(0);
+    }
+}

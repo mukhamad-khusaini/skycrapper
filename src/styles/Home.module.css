@@ -26,6 +26,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    overflow: hidden;
 }
 
 @media only screen and (max-width: 1027px) {

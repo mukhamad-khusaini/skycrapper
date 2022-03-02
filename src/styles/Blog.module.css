@@ -109,16 +109,6 @@
     align-items: center;
 }
 
-.blog .content .author .profile {
-    width: 5rem;
-    aspect-ratio: 1;
-    background-image: url("../../public/img/profile.png");
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    border-radius: 50%;
-}
-
 .blog .content .author .text {
     margin-left: 1rem;
 }

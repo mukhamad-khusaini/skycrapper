@@ -21,7 +21,17 @@ const Card_box = (props) => {
                 {data &&
                     data.map((e, i) => {
                         if (i <= 2) {
-                            return <Sub_card key={e.id} id={e.id} img={e.image} href={e.href} />;
+                            return (
+                                <Sub_card
+                                    title={e.title}
+                                    key={e.id}
+                                    id={e.id}
+                                    img={e.image}
+                                    href={e.href}
+                                    author={e.author}
+                                    date={e.date}
+                                />
+                            );
                         }
                         return false;
                     })}

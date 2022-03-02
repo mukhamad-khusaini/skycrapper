@@ -5,15 +5,25 @@ import Card_box from "./Card_box";
 import { url } from "../Global_variables";
 
 const Blog = () => {
-    const [data, setData] = useState(false);
-    const [text, setText] = useState(false);
+    const [data, setData] = useState("");
+    const [text, setText] = useState("");
     const { id } = useParams();
+
+    const style = {
+        width: "5rem",
+        height: "5rem",
+        backgroundImage: "url(" + (data && data.profile) + ")",
+        backgroundPosition: "center",
+        backgroundRepeat: "no-repeat",
+        backgroundSize: "cover",
+        borderRadius: "50%",
+    };
 
     useEffect(() => {
         fetch(url + "/" + id)
             .then((res) => res.json())
             .then((res) => {
-                setData(res);
+                setData(res[0]);
                 setText(JSON.parse(res[0].body));
             });
     }, []);
@@ -21,14 +31,16 @@ const Blog = () => {
     return (
         <div className={css.blog}>
             <div className={css.header}>
-                <h4>Bakti Sosial</h4>
-                <h1>How to Handle Shipping and Delivery During World-wide Pandemic</h1>
-                <p>M. Kalingga - 19 Desember 2022</p>
+                <h4>{data && data.type}</h4>
+                <h1>{data && data.title}</h1>
+                <p>
+                    {data && data.author} - {data && data.date}
+                </p>
                 <span></span>
             </div>
             <div className={css.content}>
-                <img src="/img/ship.jpg" alt="ship" />
-                <h6>unsplash.com</h6>
+                <img src={data && data.image} alt={data && data.alt} />
+                <h6>{data && data.imgSrc}</h6>
                 <div className={css.txt}>
                     {text &&
                         text.map((e, i) => {
@@ -44,11 +56,11 @@ const Blog = () => {
                     </div>
                 </div>
                 <div className={css.author}>
-                    <div className={css.profile}></div>
+                    <div style={style}></div>
                     <div className={css.text}>
                         <p>Written by</p>
-                        <p>Mukhamad Khusaini</p>
-                        <p>Hey, i am a senior engineer at harvard university</p>
+                        <p>{data && data.author}</p>
+                        <p>{data && data.desc}</p>
                     </div>
                 </div>
             </div>
