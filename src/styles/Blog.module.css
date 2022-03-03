@@ -67,7 +67,12 @@
     margin-bottom: 2rem;
 }
 
-.blog .content .txt p span {
+.blog .content .txt h2 {
+    font-family: var(--nunito);
+    font-size: 1rem;
+}
+
+/* .blog .content .txt p span {
     font-weight: bolder;
     font-family: var(--nunito);
     font-size: 0.9rem;
@@ -82,7 +87,7 @@
     font-family: var(--nunito);
     font-size: 0.9rem;
     line-height: 1.5rem;
-}
+} */
 
 .blog .content .share {
     margin-top: 2rem;

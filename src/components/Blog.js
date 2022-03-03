@@ -1,5 +1,5 @@
 import { useState, useEffect } from "react";
-import { useParams } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
 import css from "../styles/Blog.module.css";
 import Card_box from "./Card_box";
 import { url } from "../Global_variables";
@@ -7,6 +7,10 @@ import { url } from "../Global_variables";
 const Blog = () => {
     const [data, setData] = useState("");
     const [text, setText] = useState("");
+
+    const [heading, setHeading] = useState("");
+    let headCount = 0;
+
     const { id } = useParams();
 
     const style = {
@@ -25,6 +29,7 @@ const Blog = () => {
             .then((res) => {
                 setData(res[0]);
                 setText(JSON.parse(res[0].body));
+                setHeading(JSON.parse(res[0].heading));
             });
     }, []);
 
@@ -44,7 +49,19 @@ const Blog = () => {
                 <div className={css.txt}>
                     {text &&
                         text.map((e, i) => {
-                            return <p key={i}>{e}</p>;
+                            if (e.length <= 3 && e[0] === "H") {
+                                return <h2 key={i}>{heading[headCount++]}</h2>;
+                            } else if (e.length <= 3 && e[0] === "h") {
+                                return <h3 key={i}>{e}</h3>;
+                            } else if (e.length <= 3 && e[0] === "l") {
+                                return (
+                                    <ul key={i}>
+                                        <li>{e}</li>
+                                    </ul>
+                                );
+                            } else {
+                                return <p key={i}>{e}</p>;
+                            }
                         })}
                 </div>
                 <div className={css.share}>
