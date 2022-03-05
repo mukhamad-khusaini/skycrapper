@@ -9,7 +9,13 @@ const Blog = () => {
     const [text, setText] = useState("");
 
     const [heading, setHeading] = useState("");
+    let headingCount = 0;
+
+    const [head, setHead] = useState("");
     let headCount = 0;
+
+    const [list, setList] = useState("");
+    let listCount = 0;
 
     const { id } = useParams();
 
@@ -29,7 +35,18 @@ const Blog = () => {
             .then((res) => {
                 setData(res[0]);
                 setText(JSON.parse(res[0].body));
-                setHeading(JSON.parse(res[0].heading));
+                if (res[0].heading && res[0].head) {
+                    setHeading(JSON.parse(res[0].heading));
+                    setHead(JSON.parse(res[0].head));
+                    if (res[0].list) {
+                        setList(JSON.parse(res[0].list));
+                    }
+                } else if (res[0].heading) {
+                    setHeading(JSON.parse(res[0].heading));
+                    if (res[0].list) {
+                        setList(JSON.parse(res[0].list));
+                    }
+                }
             });
     }, []);
 
@@ -49,15 +66,17 @@ const Blog = () => {
                 <div className={css.txt}>
                     {text &&
                         text.map((e, i) => {
-                            if (e.length <= 3 && e[0] === "H") {
-                                return <h2 key={i}>{heading[headCount++]}</h2>;
-                            } else if (e.length <= 3 && e[0] === "h") {
-                                return <h3 key={i}>{e}</h3>;
-                            } else if (e.length <= 3 && e[0] === "l") {
+                            if (heading && e.length <= 3 && e[0] === "H") {
+                                return <h2 key={i}>{heading[headingCount++]}</h2>;
+                            } else if (head && e.length <= 3 && e[0] === "h") {
+                                return <h3 key={i}>{head[headCount++]}</h3>;
+                            } else if (list && e.length <= 3 && e[0] === "l") {
                                 return (
-                                    <ul key={i}>
-                                        <li>{e}</li>
-                                    </ul>
+                                    <ol key={i}>
+                                        {list[listCount++].map((e, i) => {
+                                            return <li key={i}>{e}</li>;
+                                        })}
+                                    </ol>
                                 );
                             } else {
                                 return <p key={i}>{e}</p>;

@@ -1,7 +1,6 @@
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import css from "../styles/Main_post.module.css";
-import { Link } from "react-router-dom";
 
 const Main_post = () => {
     const [title, setTitle] = useState(false);
@@ -69,7 +68,7 @@ const Main_post = () => {
                     {author} - {date}
                 </p>
                 <h1>{title}</h1>
-                <Link to={"/blog/" + id}>Read More &#62;&#62;</Link>
+                <a href={"/blog/" + id}>Read More &#62;&#62;</a>
             </div>
         </div>
     );

@@ -70,6 +70,20 @@
 .blog .content .txt h2 {
     font-family: var(--nunito);
     font-size: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+.blog .content .txt h3 {
+    font-family: var(--nunito);
+    font-size: 0.8rem;
+    color: rgb(43, 43, 43);
+    margin-bottom: 0.5rem;
+}
+
+.blog .content .txt ol {
+    font-family: var(--nunito);
+    font-size: 1.1rem;
+    margin: 0 0 2rem 1rem;
 }
 
 /* .blog .content .txt p span {
