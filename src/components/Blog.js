@@ -3,6 +3,7 @@ import { Link, useParams } from "react-router-dom";
 import css from "../styles/Blog.module.css";
 import Card_box from "./Card_box";
 import { url } from "../Global_variables";
+import Animation from "./Animation";
 
 const Blog = () => {
     const [data, setData] = useState("");
@@ -61,7 +62,7 @@ const Blog = () => {
                 <span></span>
             </div>
             <div className={css.content}>
-                <img src={data && data.image} alt={data && data.alt} />
+                {data ? <img src={data && data.image} alt={data && data.alt} /> : <Animation />}
                 <h6>{data && data.imgSrc}</h6>
                 <div className={css.txt}>
                     {text &&

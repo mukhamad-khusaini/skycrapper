@@ -1,0 +1,59 @@
+:root {
+    --color-1: #e61a1a;
+    --color-2: #4c6edb;
+    --color-3: #24aad8;
+    --color-4: #1ac7c2;
+    --color-5: #1ddea3;
+}
+
+.svg {
+    display: block;
+}
+
+.shape {
+    r: 5;
+    cy: 50;
+}
+
+.shape:nth-child(1) {
+    fill: var(--blue);
+    cx: 50;
+    animation: anim 1s infinite;
+}
+.shape:nth-child(2) {
+    fill: var(--black);
+    cx: 70;
+    animation: anim 1s infinite 100ms;
+}
+.shape:nth-child(3) {
+    fill: var(--blue);
+    cx: 90;
+    animation: anim 1s infinite 200ms;
+}
+.shape:nth-child(4) {
+    fill: var(--black);
+    cx: 110;
+    animation: anim 1s infinite 300ms;
+}
+.shape:nth-child(5) {
+    fill: var(--blue);
+    cx: 130;
+    animation: anim 1s infinite 400ms;
+}
+
+@keyframes anim {
+    0% {
+        cy: 50;
+        r: 5;
+    }
+
+    30% {
+        cy: 100;
+        r: 7;
+    }
+
+    100% {
+        cy: 50;
+        r: 5;
+    }
+}

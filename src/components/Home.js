@@ -2,6 +2,7 @@ import { useState } from "react";
 import { Routes, Route } from "react-router-dom";
 import css from "../styles/Home.module.css";
 import Latest from "./Latest";
+import Animation from "./Animation";
 
 function Home() {
     const [isActive1, setIsActive1] = useState(true);
@@ -33,7 +34,7 @@ function Home() {
             </div>
             <div className={css.container}>
                 {isActive1 && <Latest />}
-                {isActive2 && <Latest />}
+                {isActive2 && <Animation />}
                 {isActive3 && <Latest />}
                 {isActive4 && <Latest />}
             </div>

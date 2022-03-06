@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import { useMediaQuery } from "react-responsive";
 import css from "../styles/Main_post.module.css";
+import Animation from "./Animation";
 
 const Main_post = () => {
     const [title, setTitle] = useState(false);
@@ -62,7 +63,7 @@ const Main_post = () => {
 
     return (
         <div className={css.main}>
-            <div style={style}></div>
+            <div style={style}>{image ? "" : <Animation />}</div>
             <div className={css.text}>
                 <p>
                     {author} - {date}
