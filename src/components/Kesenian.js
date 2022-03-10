@@ -1,27 +1,26 @@
+import css from "../styles/Kesenian.module.css";
 import { useState, useEffect } from "react";
-import css from "../styles/Kuliner.module.css";
 import CardSecond from "./CardSecond";
 import { url } from "../Global_variables";
 
-const Kuliner = () => {
+const Kesenian = () => {
     const [data, setData] = useState("");
 
     useEffect(() => {
-        fetch(url + "/kuliner")
+        fetch(url + "/kesenian")
             .then((res) => res.json())
             .then((res) => {
                 setData(res);
             });
     }, []);
-
     return (
-        <div className={css.kuliner}>
+        <div className={css.kesenian}>
             {data &&
-                data.map((e, i) => {
+                data.map((e) => {
                     return <CardSecond key={e.id} data={e} />;
                 })}
         </div>
     );
 };
 
-export default Kuliner;
+export default Kesenian;

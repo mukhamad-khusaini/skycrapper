@@ -2,6 +2,8 @@ import { useState } from "react";
 import css from "../styles/Home.module.css";
 import Latest from "./Latest";
 import Kuliner from "./Kuliner";
+import Kesenian from "./Kesenian";
+import BaktiSosial from "./BaktiSosial";
 
 function Home() {
     const [isActive1, setIsActive1] = useState(true);
@@ -34,8 +36,8 @@ function Home() {
             <div className={css.container}>
                 {isActive1 && <Latest />}
                 {isActive2 && <Kuliner />}
-                {isActive3 && <Latest />}
-                {isActive4 && <Latest />}
+                {isActive3 && <Kesenian />}
+                {isActive4 && <BaktiSosial />}
             </div>
         </div>
     );

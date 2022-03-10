@@ -1,0 +1,55 @@
+.card {
+    display: flex;
+    flex-direction: row;
+    justify-content: baseline;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.text {
+    margin-left: 2rem;
+}
+
+.text h2 {
+    font-size: 2rem;
+    line-height: 1rem;
+}
+
+.text hr {
+    margin: 0.5rem 0;
+}
+
+.text p {
+    font-size: 1.2rem;
+    line-height: 1rem;
+}
+
+.text a {
+    text-decoration: none;
+    font-size: 1.2rem;
+}
+
+@keyframes move {
+    to {
+        transform: translateX(0);
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .card {
+        flex-direction: column;
+        justify-content: center;
+    }
+
+    .img {
+        margin-bottom: 1rem;
+    }
+
+    .text {
+        margin: 0;
+    }
+
+    .text h2 {
+        line-height: 1.2rem;
+    }
+}
